@@ -16,9 +16,9 @@ Benchmarking Quantum Computers
 ## Articles
 
 ### 1 Benchmarking an 11-qubit quantum computer
-- Author(s):K. Wright1*, K.M. Beck 1, S. Debnath1, J.M. Amini1, Y. Nam 1, N. Grzesiak1, J.-S. Chen1, N.C. Pisenti1,
-M. Chmielewski1,2, C. Collins1, K.M. Hudek 1, J. Mizrahi1, J.D. Wong-Campos1, S. Allen1, J. Apisdorf1,
-P. Solomon 1, M. Williams1, A.M. Ducore1, A. Blinov1, S.M. Kreikemeier1, V. Chaplin1, M. Keesan1,
+- Author(s):K. Wright, K.M. Beck, S. Debnath, J.M. Amini, Y. Nam 1, N. Grzesiak, J.-S. Chen1, N.C. Pisenti1,
+M. Chmielewski, C. Collins, K.M. Hudek, J. Mizrahi1, J.D. Wong-Campos1, S. Allen1, J. Apisdorf,
+P. Solomon, M. Williams, A.M. Ducore, A. Blinov, S.M. Kreikemeier, V. Chaplin, M. Keesan,
 C. Monroe1,2 & J. Kim1,3
 - Publisher/Journal: Nature Communications
 - Date: 2019
@@ -27,7 +27,7 @@ C. Monroe1,2 & J. Kim1,3
 This is an experimental example of benchmarking a real quantum computer. 
 
 ### 2 Quantum certification and benchmarking
-- Author(s): J. Eisert,1, 2, 3,  D. Hangleiter,1,  N. Walk,1 I. Roth,1 D. Markham,4, 5 R. Parekh,4, 5 U. Chabaud,4, 5 and E. Kashefi4, 5, 6
+- Author(s): J. Eisert,  D. Hangleiter,  N. Walk, I. Roth, D. Markham, R. Parekh, U. Chabaud, and E. Kashefi,
 - Publisher: Nature Reviews Physics
 - Date: 6/17/2020
 - Pages: 10
@@ -35,8 +35,8 @@ This is an experimental example of benchmarking a real quantum computer.
 This paper describes a schematic for assessing benchmarks for quantum computers and defines a series of measures that can be used in benchmarking.
 
 ### 3 A variational eigenvalue solver on a quantum processor
-- Author(s): Alberto Peruzzo,1,  Jarrod McClean,2,  Peter Shadbolt,1 Man-Hong Yung,2, 3
-Xiao-Qi Zhou,1 Peter J. Love,4 Alan Aspuru-Guzik,2 and Jeremy L. O'Brien1
+- Author(s): Alberto Peruzzo,  Jarrod McClean, Peter Shadbolt, Man-Hong Yung,
+Xiao-Qi Zhou, Peter J. Love, Alan Aspuru-Guzik, and Jeremy L. O'Brien
 - Publisher: Nature Communications
 - Date: 7/23/2014
 - Pages: 10
