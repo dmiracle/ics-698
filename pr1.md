@@ -14,12 +14,6 @@ Benchmarking Quantum Computers
 # Literature Review
 
 ## Articles
-- Title:
-- Author(s):
-- Publisher:
-- Date:
-- Pages:
-- Relevance:
 
 ### 1 Benchmarking an 11-qubit quantum computer
 - Author(s):K. Wright1*, K.M. Beck 1, S. Debnath1, J.M. Amini1, Y. Nam 1, N. Grzesiak1, J.-S. Chen1, N.C. Pisenti1,
