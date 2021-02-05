@@ -15,7 +15,7 @@ jobs:
           root_file: term_paper.tex
           working_directory: term_paper
       - name: Publish Artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-release-asset@v2
         with:
           name: PDF
           path: term_paper/term_paper.pdf
