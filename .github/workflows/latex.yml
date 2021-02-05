@@ -1,0 +1,20 @@
+name: Build LaTex document
+on: 
+  push:
+    branches:
+      - main
+jobs:
+  build-latex:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Build Document
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: term_paper.tex
+      - name: Publish Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: PDF
+          path: term_paper.pdf
