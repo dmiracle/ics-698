@@ -18,4 +18,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: PDF
-          path: term_paper.pdf
+          path: term_paper/term_paper.pdf
