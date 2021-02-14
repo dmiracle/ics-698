@@ -9,7 +9,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Build Document
+      - name: Build Annotated Bibliography
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: annotated_bib.tex
+          working_directory: annotated_bib
+      - name: Build Term Paper
         uses: xu-cheng/latex-action@v2
         with:
           root_file: term_paper.tex
