@@ -1,5 +1,5 @@
-\documentclass[conference]{IEEEtran}
-\IEEEoverridecommandlockouts
+\documentclass{article}
+
 % The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
 \usepackage{cite}
 \usepackage{amsmath,amssymb,amsfonts}
@@ -26,22 +26,20 @@
 \end{titlepage}
 \title{Survey of benchmarking quantum computers: annotated bibliography}
 
-\author{\IEEEauthorblockN{Dylan Miracle}
-\IEEEauthorblockA{\textit{Department of Computer Science} \\
+\author{Dylan Miracle\\
+\textit{Department of Computer Science} \\
 \textit{Metropolitan State University}\\
 St. Paul, Minnesota, USA \\
 dylan.miracle@my.metrostate.edu
-}}
+}
 
 \maketitle
 
+\tableofcontents
 \begin{abstract}
 Quantum computing has a rich theoretical background but practical quantum computers have only recently become available to researchers and business users. These computers are still rare and operated by a small number of hardware vendors. Implementing useful algorithms on existing quantum hardware will require understanding how well quantum computers replicate their theoretical ideal. Measures of fidelity to theory have been created for specific hardware and frameworks have been developed to classify  different types of benchmarks. We seek to understand these benchmarking methods and how they may be implemented using different programming languages available for programming quantum computers.
 \end{abstract}
 
-\begin{IEEEkeywords}
-    quantum computing, quantum engineering, quantum benchmark
-\end{IEEEkeywords}
 
 \section{Introduction}
 Quantum computing has fundamental implications for computation. Researchers are continuing to expand the understanding of what quantum computers can do while hardware vendors build more powerful quantum processors. Users of quantum computers need a theoretical understanding of the algorithms they will use on quantum computers, but also need to understand that quantum computers are not perfect facsimiles of their theoretical counterparts. 
