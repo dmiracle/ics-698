@@ -1,0 +1,82 @@
+\documentclass{article}
+
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+\usepackage{listings}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+\begin{document}
+\begin{titlepage}
+    \begin{center}
+        \vspace{4cm}
+        \Huge
+        \textbf{
+            Learn Quantum Computation Using Qiskit \\
+            Abraham Asfaw, James Wootton, et al \\
+            University of Waterloo \\
+            2017 \\
+            Dylan Miracle \\
+            ICS 698-02 \\
+            Spring 2021 \\
+            Feb 17, 2021 \\
+            Dr. Jigang Liu
+        }
+    \end{center}
+\end{titlepage}
+\title{Learn Quantum Computation Using Qiskit}
+
+\author{Dylan Miracle\\
+\textit{Department of Computer Science} \\
+\textit{Metropolitan State University}\\
+St. Paul, Minnesota, USA \\
+dylan.miracle@my.metrostate.edu
+}
+
+\maketitle
+\section{Background}
+This book assumes basic background in computing but attempts to teach the fundamentals of quantum computing using qiskit framework. This review concentrates on the first 2 chapters of the book which introduce qubits and basic single and multiple qubit operations. 
+
+\section{Main idea/conclusion}
+Qiskit is an appropriate framework to examine the basics of quantum computing as well as an extensible framework that will give users access to more advanced applications once they have worked through the fundamentals. 
+
+\section{Support facts/algorithms/methods}
+
+The book offers and exploration of qubits with qiskit using the following program:
+\begin{lstlisting}
+from qiskit import QuantumCircuit, assemble, Aer
+from qiskit.visualization import plot_histogram, plot_bloch_vector
+from math import sqrt, pi
+qc = QuantumCircuit(1)
+initial_state = [0,1]   # Define initial_state as |1>
+qc.initialize(initial_state, 0) # Apply initialisation operation to the 0th qubit
+qc.draw()  # Let's view our circuit
+\end{lstlisting}
+This is the fundamental code to initialize and represent a qubit in a Jupyter notebook. The first chapter on prerequisites explains how to set up the environment for qiskit.
+
+The qiskit book provides an interactive environment to try the code as you read. This is a useful pedagogical tool and means that a user does not necessarily have to set up an environment themselves, but applying anything beyond what is illustrated in the text would require building out a qiskit development environment.
+
+
+
+\section{Arguments/disagreements/concerns}
+
+Qiskit is a very large software package and has multiple tiers of usage that can quickly become overwhelming to new developers in quantum computing. Users should already be able to use jupyter notebooks and be comfortable with python. While the representations of the results are superior to QASM, the code is an abstraction away from pure circuits so requires a deeper understanding to make useful.
+
+Navigating the qiskit textbook might not require a ton of knowledge about computing to get started but it assumes a very high level of mathematics for developers. This is a impediment to getting new users and users without a background in linear algebra into using the platform. 
+
+\section{Interesting findings}
+Qiskit has built in simulators that allow developers to test quantum code. These are defined in backends and housed in companion projects. The qiskit project is actually an umbrella of several other projects that include "terra" for fundamentals and "aer" for simulations.
+
+The software architecture of qiskit is full featured and will probably be one of the defining architectures of quantum computing. They separate QC into the fundamentals -- code that would compile to run on actual quantum hardware, simulators, advanced applications for specific research areas and industries, and tools for hardware verification and error correction. 
+
+\section{Quotations}
+The case for quantum computers, simply put, is that they can solve certain problems that no classical computer ever could. To understand why this is, we first need to consider how much computational effort is required to solve certain problems.
+
+One consequence of having a universal set of quantum gates is the ability to reproduce any classical computation. We simply need to compile the classical computation down into the Boolean logic gates that we saw in The Atoms of Computation, and then reproduce these on a quantum computer.
+
+
+\end{document}
