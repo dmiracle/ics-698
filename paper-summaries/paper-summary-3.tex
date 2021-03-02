@@ -13,7 +13,7 @@
 \begin{titlepage}
     \begin{center}
         \vspace{4cm}
-        \Huge
+        \large
         \textbf{
             Quantum theory, the Church-Turing principle and the universal quantum computer \\
             D. Deutch \\
@@ -42,16 +42,27 @@ Computing machines have an input and output state, and in the classical world th
 
 \section{Main idea/conclusion}
 
-This paper extends the Church-Turing hypothesis to include physical laws of quantum mechanics. Where as the Church-Turing hypothesis says that a Turing machine can be extended to any possible calculation, the quantum computer is hypothesized to act under natural laws, discrete time, and finite means.
+This paper extends the Church-Turing hypothesis to include physical laws of quantum mechanics. Where as the Church-Turing hypothesis says that a Turing machine can be extended to any possible calculation, the quantum computer is hypothesized to act under natural laws, discrete time, and finite means. This paper goes on to propose that any physical process can be represented on a quantum Turing machine (QTM), and write the program for the famous Einstein-Podolski-Rosen (EPR) experiment.
 
 \section{Support facts/algorithms/methods}
+
+The universal quantum computer that is analogous to the Turing machine, the QTM, is a series of unitary quantum operations. These are by nature linear and reversible, meaning that the QTM is a reversible computing machine. This is an implied property bases on the nature of quantum mechanical unitary operators.
+
+As an example of a 2 state quantum system that can be used we review the mathematics of 2 dimensional rotations. While the term is not coined in this paper, what we now call a qubit is operated on with the "spin matrices" and operations are defined in terms of spin transformations and their inverses. A more concise version of this is used in quantum computing today.
+
 
 
 \section{Arguments/disagreements/concerns}
 
+The simulation of physical systems and any quantum preparation is coupled to the environment. This leads to the decay of a quantum preparation. Can we guarantee that the math works even with environmental coupling? This problem is one of the most difficult engineering challenges in quantum computers today, how to make a quantum preparation, that can be acted upon by the user, but is not impacted by the environment.
+
+The QTM is a cumbersome tool for developing algorithms as it requires that we embark on difficult quantum mechanical operations at every step. There is not a simply defined set of operations, instead the operations depend on the physical system being used. This is fine for physicists who want to study a particular system, however these do not easily generalize into programming languages that can abstract away the physics.
 
 \section{Interesting findings}
 
+Deutsch shows that a quantum computer will be able to perfectly simulate finite physical systems, showing that Feynman's proposal is indeed correct. The article concludes by proposing a quantum program for a QTM that will replicate a the famous EPR experiment.
+
+Quantum parallelism is introduced as a natural feature of a serial quantum computing device. That is, the nature of quantum mechanics is to incorporate information from multiple sources. Deutsch calls these "parallel interfering universes" and while this is not a universally accepted interpretation, the implication is that multiple possible outcomes can be operated on with a single computation on a single qubit. 
 
 \section{Quotations}
 Every finitely realizible physical system can be perfectly simulated by a universal model computing machine operating by finite means.
