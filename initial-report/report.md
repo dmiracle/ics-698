@@ -47,19 +47,28 @@ Fundamental qubit operations: rotations, reversible
 Fundamental bit operations: identity, negation, set 0, set 1
 
 
+### Quantum computing workflow visualization
 
+We should understand quantum computation as a workflow between the classical computer and the quantum computer. In this example we will create a simple quantum program and follow its execution using standard open source tooling available for programming IBM quantum computers. At the highest level we can understand that the classical computer is used to define the computation we will do, then an API is used to communicate the quantum job to the chosen backend, in our case a simulator, though a similar method will be used to submit the job to actual quantum hardware.
+![](qworkflow.png)
 
+![](circuit.png)
+```c
+OPENQASM 2.0;
+include "qelib1.inc";
 
-### Benchmarking and error rates
+// this is a basic quantum circuit that creates an entangled pair
 
-#### Classical Benchmarks
-FLOPS, cycles per second, graphical rendering, hash calculations
-
-#### Quantum Benchmarks
-
-- Issues with different hardware
-- How much does a gate act like we suspect?
-
+qreg q[2];		// create a quantum register with 2 qubits
+creg c[2]; 		// create a classical register with 2 bits
+h q[0];  		// perform Hadamard gate on one qubit
+cx q[0],q[1];  	// perform control-not gate on both qubits
+// z q[1];
+// an entangled state of the Bell-pair form has been created!
+  
+measure q[0] -> c[0];	//measure one qubit, and put outcome in one bit
+measure q[1] -> c[1];	//measure the other qubit, and put outcome in the other bit
+```
 ## Tentative plan for next step of the study
 
 ## Refs
