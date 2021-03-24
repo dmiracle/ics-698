@@ -50,6 +50,7 @@ dylan.miracle@my.metrostate.edu
 \maketitle
 
 \tableofcontents
+\pagebreak
 
 \section{Introduction}
 
@@ -89,13 +90,42 @@ Qubits are represented as two element column vectors. The elements are complex n
     \includegraphics[width=0.25\textwidth]{superpos.png}
     \caption{Bloch vector for qubit $(\ket{0}+\ket{1})/\sqrt{2}$.}
 \end{figure}
+
+$$
+\ket{0} = 
+\begin{bmatrix}
+1 \\
+0
+\end{bmatrix}
+$$
+$$
+\ket{1} =
+\begin{bmatrix}
+0 \\
+1
+\end{bmatrix}
+$$
+$$
+\frac{1}{\sqrt{2}}(\ket{0}+\ket{1}) = 
+\begin{bmatrix}
+    \frac{1}{\sqrt{2}}\\
+    \frac{1}{\sqrt{2}}
+\end{bmatrix}
+$$
+$$
+H = \frac{1}{\sqrt{2}}
+\begin{bmatrix}
+    1 & 1 \\
+    1 & -1
+\end{bmatrix}
+$$
 \subsection{Bell state}
 
 We achieve a bell state by using a CNOT gate to combine a $\ket{0}$ with a superposition like 
 $\frac{1}{\sqrt{2}}(\ket{0}+\ket{1})$. This creates what is known as an entangled state. This combination results in a state represented as 
 
 $$
-\frac{\ket{00}+\ket{11}}{2}
+\frac{\ket{00}+\ket{11}}{\sqrt{2}}
 $$
 
 With the property that any individual measurement of on of the qubits is random, but the measurement of the second qubit is entangled with the measurement of the first. So a measurement of 1 for qubit 0, means we will get a 1 for qubit 1 as well. In the next section we will simulate such a state and visualize it with a histogram.
@@ -107,8 +137,7 @@ With the property that any individual measurement of on of the qubits is random,
 
 \subsection{Quantum and classical workflows}
 
-
-
+The central finding of this paper is that quantum computing will employ workflows from classical digital computers that software developers are used to using to implement new types of computation that will me new to most software developers. We show that the preparation of a quantum circuit is created with a domain specific language, then loaded into a python program that will look familiar to python developers. The quantum workload will be sent to a quantum backend where the quantum computation will be done, then the results will be collected into a data structure that can be analyzed and displayed using standard methods. We demonstrate a simple quantum program and decompose its workflow into the classical and quantum parts so that we can understand how developers will used quantum computing in the near future.
 
 \subsection{Program bell state in QASM}
 
@@ -118,6 +147,7 @@ Pure quantum computing involves superposition and entanglement. We will use a hy
 
 In this program we will implement the Bell state by preparing two quantum registers and two classical registers. The quantum registers will then be put into a Bell state by sending one qubit through a Hadamard gate to create a superposition, then both qubits through a CNOT gate to entangle them. Finally a measurement will be performed on each qubit independently. 
 \begin{samepage}
+\begin{figure}[H]
 \begin{minted}{c}
 OPENQASM 2.0;
 include "qelib1.inc";
@@ -130,6 +160,8 @@ cx q[0],q[1];
 measure q[0] -> c[0];
 measure q[1] -> c[1];
 \end{minted}
+\caption{bell.qasm}
+\end{figure}
 \end{samepage}
 
 Once we have defined the circuit using the intermediate representation of QASM, we can import the circuit into a higher level language that will be used to submit the circuit to a simulator or to quantum hardware. In the following example we will use Qiskit to load our circuit and submit it to the builtin simulator.
@@ -139,6 +171,7 @@ Once we have defined the circuit using the intermediate representation of QASM, 
 The Qiskit program that follows will expand our workflow. We use standard methods of python programming familiar to anyone used to using the language to load our libraries, import the circuit, then submit the circuit to the simulator backend. The only change we would need to make to submit this program to actual quantum hardware is the change the backend to point at a quantum processor.
 
 \begin{samepage}
+\begin{figure}[H]
 \begin{minted}{python}
 import qiskit
 from qiskit.visualization import plot_histogram
@@ -151,6 +184,8 @@ result = qiskit.execute([qc], backend, shots=100)
 count = result.result().get_counts()
 plot_histogram(count)
 \end{minted}
+\caption{bell-qiskit.py}
+\end{figure}
 \end{samepage}
 
 \subsection{Summary of findings}
@@ -189,7 +224,7 @@ Developing quantum algorithms is found to follow a flow from the quantum mechani
 Developing quantum algorithms is found to follow a flow from the quantum mechanics, to a quantum circuit, to intermediate representations, to higher level frameworks. This flow illustrates the findings of this paper and will serve as an outline for our exploration of quantum computing. 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.75\textwidth]{qworkflow.png}
+    \includegraphics[width=1.0\textwidth]{qworkflow.png}
     \caption{The quantum computing workflow.}
 \end{figure}
 
@@ -206,13 +241,11 @@ Much work has been done to develop quantum computing frameworks. These framework
 
 \section{Next Steps}
 
-The next part of this study could be to extend our workflow understanding to encompass what tools are availble to build hybrid workflows for different 
-
+The next part of this study could be to extend our workflow understanding to encompass what tools are available to build hybrid workflows for the different kinds of quantum applications that will be available in the short term. The quantum computers that are available now are known as noisy intermediate scale quantum (NISQ) computers. These can only run a certain subset of quantum algorithms. Next steps would be to create workflows for NISQ computers.
 
 \section{References}
 \begin{thebibliography}{00}
     \makeatletter
-    \addtocounter{\@listctr}{4}
     \makeatother
     \bibitem{b1} Michael S. Saraivanov, Quantum Circuit Synthesis using Group Decomposition and Hilbert Spaces, MS, Portland State University, 2013.
     \bibitem{b2} M. A. Nielsen and I. L. Chuang, Quantum Computation and Quantum Information, 10th Anniversary ed., Cambridge, 2016, pp. 171--215.
